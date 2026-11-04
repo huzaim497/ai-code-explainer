@@ -1,0 +1,307 @@
+/* =================================
+   1. Global Reset and Variables
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #080d1a;
+    --surface: #111a2e;
+    --surface-light: #192640;
+    --primary: #3978f6;
+    --primary-hover: #2862d8;
+    --text-primary: #f1f5ff;
+    --text-secondary: #9baac4;
+    --border: #263651;
+    --success: #22c55e;
+    --danger: #ef4444;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 24px;
+}
+
+/* =================================
+   2. Header
+================================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.brand p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.header-tag {
+    background: rgba(57, 120, 246, 0.15);
+    color: #77a5ff;
+    border: 1px solid rgba(57, 120, 246, 0.35);
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =================================
+   3. Main Content
+================================= */
+
+.main-content {
+    padding-top: 45px;
+}
+
+.intro-section {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+.intro-section h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.intro-section p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+/* =================================
+   4. Input and Output Sections
+================================= */
+
+.input-section,
+.output-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 28px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.section-heading h3 {
+    font-size: 19px;
+}
+
+/* =================================
+   5. Form Elements
+================================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    background: #0b1426;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 13px 15px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+.form-group textarea {
+    min-height: 250px;
+    resize: vertical;
+    font-family: Consolas, monospace;
+    line-height: 1.7;
+}
+
+.form-group textarea::placeholder {
+    color: #65738d;
+}
+
+/* =================================
+   6. Buttons
+================================= */
+
+.action-area {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#explainBtn,
+#copyBtn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#explainBtn:hover,
+#copyBtn:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+#copyBtn {
+    padding: 9px 15px;
+    font-size: 12px;
+}
+
+#copyBtn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* =================================
+   7. Explanation Result Cards
+================================= */
+
+.result-card {
+    background: #0b1426;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.result-card h4 {
+    color: #80aaff;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.result-card p,
+.result-card li {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.result-card ol,
+.result-card ul {
+    padding-left: 22px;
+}
+
+.result-card li {
+    margin-bottom: 8px;
+}
+
+/* =================================
+   8. Error Message
+================================= */
+
+.error-message {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #ff9999;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+/* =================================
+   9. Footer
+================================= */
+
+.footer {
+    text-align: center;
+    border-top: 1px solid var(--border);
+    padding: 22px 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* =================================
+   10. Responsive Design
+================================= */
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 18px 14px;
+    }
+
+    .brand h1 {
+        font-size: 21px;
+    }
+
+    .intro-section h2 {
+        font-size: 25px;
+    }
+
+    .input-section,
+    .output-section {
+        padding: 18px;
+    }
+
+    .section-heading {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+    }
+
+    .intro-section h2 {
+        font-size: 22px;
+    }
+
+    #explainBtn {
+        width: 100%;
+    }
+
+    .action-area {
+        justify-content: stretch;
+    }
+}
