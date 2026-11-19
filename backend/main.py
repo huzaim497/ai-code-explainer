@@ -87,9 +87,9 @@ def explain(request: ExplainRequest):
 
         return result
 
-except Exception as error:
-    traceback.print_exc()
-    raise HTTPException(
-        status_code=500,
-        detail=f"AI explanation failed: {str(error)}"
-    )
+    except Exception as error:
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=500,
+            detail=f"AI explanation failed: {str(error)}"
+        )
