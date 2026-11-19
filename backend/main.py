@@ -1,3 +1,4 @@
+import traceback
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -86,8 +87,9 @@ def explain(request: ExplainRequest):
 
         return result
 
-    except Exception as error:
-        raise HTTPException(
-            status_code=500,
-            detail=f"AI explanation failed: {str(error)}"
-        )
+except Exception as error:
+    traceback.print_exc()
+    raise HTTPException(
+        status_code=500,
+        detail=f"AI explanation failed: {str(error)}"
+    )
